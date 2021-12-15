@@ -84,11 +84,13 @@ class _ProfileState extends State<Profile> {
             try {
               return GestureDetector(
                 onTap: () {
-                  snapshot.data! != widget.userProvider.user
-                      ? Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) =>
-                              Profile(snapshot.data!, widget.userProvider)))
-                      : print("no");
+                  try {
+                    snapshot.data! != widget.userProvider.user
+                        ? Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) =>
+                                Profile(snapshot.data!, widget.userProvider)))
+                        : print("no");
+                  } catch (e) {}
                 },
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -130,9 +132,13 @@ class _ProfileState extends State<Profile> {
             try {
               return GestureDetector(
                 onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) =>
-                          Profile(snapshot.data!, widget.userProvider)));
+                  try {
+                    snapshot.data! != widget.userProvider.user
+                        ? Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) =>
+                                Profile(snapshot.data!, widget.userProvider)))
+                        : print("no");
+                  } catch (e) {}
                 },
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
