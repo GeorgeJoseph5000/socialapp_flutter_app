@@ -84,9 +84,11 @@ class _ProfileState extends State<Profile> {
             try {
               return GestureDetector(
                 onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) =>
-                          Profile(snapshot.data!, widget.userProvider)));
+                  snapshot.data! != widget.userProvider.user
+                      ? Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) =>
+                              Profile(snapshot.data!, widget.userProvider)))
+                      : print("no");
                 },
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
