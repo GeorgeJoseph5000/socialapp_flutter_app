@@ -85,7 +85,7 @@ class _ProfileState extends State<Profile> {
               return GestureDetector(
                 onTap: () {
                   try {
-                    snapshot.data! != widget.userProvider.user
+                    snapshot.data!.id != widget.userProvider.user.id
                         ? Navigator.of(context).push(MaterialPageRoute(
                             builder: (context) =>
                                 Profile(snapshot.data!, widget.userProvider)))
@@ -133,7 +133,7 @@ class _ProfileState extends State<Profile> {
               return GestureDetector(
                 onTap: () {
                   try {
-                    snapshot.data! != widget.userProvider.user
+                    snapshot.data!.id != widget.userProvider.user.id
                         ? Navigator.of(context).push(MaterialPageRoute(
                             builder: (context) =>
                                 Profile(snapshot.data!, widget.userProvider)))
