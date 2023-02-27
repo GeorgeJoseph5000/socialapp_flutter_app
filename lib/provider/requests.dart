@@ -3,7 +3,7 @@ import 'dart:convert';
 
 import 'package:http/http.dart';
 
-const baseurl = "https://socialapp5000.herokuapp.com/api/";
+const baseurl = "https://wild-dungarees-bee.cyclic.app/api/";
 
 Future<Response> postReq(String url, Object body) async {
   var response = await http.post(Uri.parse(baseurl + url),
